@@ -85,9 +85,12 @@ Isaque
 
   // Função para simular o efeito de digitação
   function typeLetter(text, element) {
-    element.innerHTML = ""; // Limpa o conteúdo anterior
-    let index = 0;
+  // Limpa o conteúdo anterior de forma mais segura
+  element.innerHTML = "";
+  let index = 0;
 
+  // Certifique-se de que a animação anterior foi completamente removida
+  setTimeout(() => {
     const typingInterval = setInterval(() => {
       if (index < text.length) {
         element.innerHTML += text[index];
@@ -96,7 +99,8 @@ Isaque
         clearInterval(typingInterval);
       }
     }, 50); // Ajuste a velocidade da digitação aqui (em milissegundos)
-  }
+  }, 100); // Um pequeno atraso para garantir que o conteúdo anterior foi limpo
+}
 
   // Função para mostrar a citação aleatória
   function showRandomQuote() {
