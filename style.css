@@ -39,7 +39,7 @@ body.loaded #welcome-message {
   width: 95%; /* Ajustado de 90% para 95% */
   height: auto; /* Mudança aqui para permitir que o container ajuste sua altura conforme o conteúdo */
   opacity: 0;
-  overflow: hidden; /* Alterei de auto para hidden para garantir que o conteúdo não se sobreponha */
+  overflow: auto; /* Agora a caixa de texto pode rolar caso o conteúdo seja muito grande */
   transition: all 1.5s ease-in-out;
   transform: rotateX(5deg);
   z-index: 10; /* Prioridade alta */
@@ -47,17 +47,6 @@ body.loaded #welcome-message {
   font-family: 'Softness Axis', sans-serif; /* Fonte mais fofa: Softness Axis */
   text-align: center; /* Centraliza o texto dentro da caixa */
   padding: 30px; /* Aumentei o padding para dar um visual mais espaçado */
-  position: relative; /* Necessário para que o overflow funcione corretamente */
-}
-
-/* Mensagem de Texto - Ajustes */
-#message {
-  white-space: pre-wrap; /* Permite quebra de linha e preserva espaços */
-  overflow-wrap: break-word; /* Quebra palavras longas, se necessário */
-  font-size: 1.2rem; /* Ajuste no tamanho da fonte */
-  line-height: 1.5; /* Melhor espaçamento entre as linhas */
-  opacity: 0; /* Inicialmente oculto para animação */
-  transition: opacity 1s ease-in-out; /* Controla a animação de visibilidade */
 }
 
 /* Coração (Prioridade Alta) */
